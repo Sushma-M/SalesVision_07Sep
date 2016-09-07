@@ -1,0 +1,584 @@
+{
+  "name" : "hrdb",
+  "description" : null,
+  "packageName" : "com.hrdb",
+  "draft" : false,
+  "tables" : [ {
+    "name" : "EMPLOYEE",
+    "oldName" : null,
+    "entityName" : "Employee",
+    "type" : "TABLE",
+    "schema" : "PUBLIC",
+    "catalog" : "PUBLIC",
+    "columns" : [ {
+      "name" : "EID",
+      "oldName" : "EID",
+      "fieldName" : "eid",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "FIRSTNAME",
+      "oldName" : "FIRSTNAME",
+      "fieldName" : "firstname",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "LASTNAME",
+      "oldName" : "LASTNAME",
+      "fieldName" : "lastname",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "STREET",
+      "oldName" : "STREET",
+      "fieldName" : "street",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "CITY",
+      "oldName" : "CITY",
+      "fieldName" : "city",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "STATE",
+      "oldName" : "STATE",
+      "fieldName" : "state",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 2,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "ZIP",
+      "oldName" : "ZIP",
+      "fieldName" : "zip",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "BIRTHDATE",
+      "oldName" : "BIRTHDATE",
+      "fieldName" : "birthdate",
+      "sqlType" : "date",
+      "javaType" : "date",
+      "length" : 10,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "PICURL",
+      "oldName" : "PICURL",
+      "fieldName" : "picurl",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "TWITTERID",
+      "oldName" : "TWITTERID",
+      "fieldName" : "twitterid",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 40,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "DEPTID",
+      "oldName" : "DEPTID",
+      "fieldName" : "deptid",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "MANAGERID",
+      "oldName" : "MANAGERID",
+      "fieldName" : "managerid",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "TENANTID",
+      "oldName" : "TENANTID",
+      "fieldName" : "tenantid",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    } ],
+    "primaryKey" : {
+      "name" : "GENERATED_PK_EMPLOYEE_EID",
+      "virtual" : false,
+      "columns" : [ "EID" ],
+      "generator" : {
+        "generatorType" : "identity",
+        "generatorValue" : null
+      }
+    },
+    "relations" : [ {
+      "name" : "GENERATED_FK_EMPLOYEE_TO_DEPARTMENT_DEPTID",
+      "fieldName" : "EMPLOYEE_1",
+      "cardinality" : "ManyToOne",
+      "sourceTable" : "EMPLOYEE",
+      "targetTable" : "DEPARTMENT",
+      "mappings" : [ {
+        "sourceColumn" : "DEPTID",
+        "targetColumn" : "DEPTID"
+      } ],
+      "primary" : true,
+      "virtual" : false
+    }, {
+      "name" : "GENERATED_FK_EMPLOYEE_TO_EMPLOYEE_MANAGERID",
+      "fieldName" : "EMPLOYEE_2",
+      "cardinality" : "ManyToOne",
+      "sourceTable" : "EMPLOYEE",
+      "targetTable" : "EMPLOYEE",
+      "mappings" : [ {
+        "sourceColumn" : "MANAGERID",
+        "targetColumn" : "EID"
+      } ],
+      "primary" : true,
+      "virtual" : false
+    }, {
+      "name" : "GENERATED_FK_EMPLOYEE_TO_EMPLOYEE_MANAGERID",
+      "fieldName" : null,
+      "cardinality" : "OneToMany",
+      "sourceTable" : "EMPLOYEE",
+      "targetTable" : "EMPLOYEE",
+      "mappings" : [ {
+        "sourceColumn" : "EID",
+        "targetColumn" : "MANAGERID"
+      } ],
+      "primary" : false,
+      "virtual" : false
+    }, {
+      "name" : "GENERATED_FK_EMPLOYEE_TO_VACATION_EMPID",
+      "fieldName" : null,
+      "cardinality" : "OneToMany",
+      "sourceTable" : "EMPLOYEE",
+      "targetTable" : "VACATION",
+      "mappings" : [ {
+        "sourceColumn" : "EID",
+        "targetColumn" : "EMPID"
+      } ],
+      "primary" : false,
+      "virtual" : false
+    } ],
+    "constraints" : null
+  }, {
+    "name" : "VACATION",
+    "oldName" : null,
+    "entityName" : "Vacation",
+    "type" : "TABLE",
+    "schema" : "PUBLIC",
+    "catalog" : "PUBLIC",
+    "columns" : [ {
+      "name" : "ID",
+      "oldName" : "ID",
+      "fieldName" : "id",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "STARTDATE",
+      "oldName" : "STARTDATE",
+      "fieldName" : "startdate",
+      "sqlType" : "date",
+      "javaType" : "date",
+      "length" : 10,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "ENDDATE",
+      "oldName" : "ENDDATE",
+      "fieldName" : "enddate",
+      "sqlType" : "date",
+      "javaType" : "date",
+      "length" : 10,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "EMPID",
+      "oldName" : "EMPID",
+      "fieldName" : "empid",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "TENANTID",
+      "oldName" : "TENANTID",
+      "fieldName" : "tenantid",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    } ],
+    "primaryKey" : {
+      "name" : "GENERATED_PK_VACATION_ID",
+      "virtual" : false,
+      "columns" : [ "ID" ],
+      "generator" : {
+        "generatorType" : "identity",
+        "generatorValue" : null
+      }
+    },
+    "relations" : [ {
+      "name" : "GENERATED_FK_EMPLOYEE_TO_VACATION_EMPID",
+      "fieldName" : "VACATION_1",
+      "cardinality" : "ManyToOne",
+      "sourceTable" : "VACATION",
+      "targetTable" : "EMPLOYEE",
+      "mappings" : [ {
+        "sourceColumn" : "EMPID",
+        "targetColumn" : "EID"
+      } ],
+      "primary" : true,
+      "virtual" : false
+    } ],
+    "constraints" : null
+  }, {
+    "name" : "DEPARTMENT",
+    "oldName" : null,
+    "entityName" : "Department",
+    "type" : "TABLE",
+    "schema" : "PUBLIC",
+    "catalog" : "PUBLIC",
+    "columns" : [ {
+      "name" : "DEPTID",
+      "oldName" : "DEPTID",
+      "fieldName" : "deptid",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "NAME",
+      "oldName" : "NAME",
+      "fieldName" : "name",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "BUDGET",
+      "oldName" : "BUDGET",
+      "fieldName" : "budget",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "Q1",
+      "oldName" : "Q1",
+      "fieldName" : "q1",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "Q2",
+      "oldName" : "Q2",
+      "fieldName" : "q2",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "Q3",
+      "oldName" : "Q3",
+      "fieldName" : "q3",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "Q4",
+      "oldName" : "Q4",
+      "fieldName" : "q4",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "DEPTCODE",
+      "oldName" : "DEPTCODE",
+      "fieldName" : "deptcode",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 20,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "LOCATION",
+      "oldName" : "LOCATION",
+      "fieldName" : "location",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 255,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "TENANTID",
+      "oldName" : "TENANTID",
+      "fieldName" : "tenantid",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    } ],
+    "primaryKey" : {
+      "name" : "GENERATED_PK_DEPARTMENT_DEPTID",
+      "virtual" : false,
+      "columns" : [ "DEPTID" ],
+      "generator" : {
+        "generatorType" : "identity",
+        "generatorValue" : null
+      }
+    },
+    "relations" : [ {
+      "name" : "GENERATED_FK_EMPLOYEE_TO_DEPARTMENT_DEPTID",
+      "fieldName" : null,
+      "cardinality" : "OneToMany",
+      "sourceTable" : "DEPARTMENT",
+      "targetTable" : "EMPLOYEE",
+      "mappings" : [ {
+        "sourceColumn" : "DEPTID",
+        "targetColumn" : "DEPTID"
+      } ],
+      "primary" : false,
+      "virtual" : false
+    } ],
+    "constraints" : null
+  }, {
+    "name" : "USER",
+    "oldName" : null,
+    "entityName" : "User",
+    "type" : "TABLE",
+    "schema" : "PUBLIC",
+    "catalog" : "PUBLIC",
+    "columns" : [ {
+      "name" : "USERID",
+      "oldName" : "USERID",
+      "fieldName" : "userid",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : false,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "USERNAME",
+      "oldName" : "USERNAME",
+      "fieldName" : "username",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 20,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "PASSWORD",
+      "oldName" : "PASSWORD",
+      "fieldName" : "password",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 20,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "ROLE",
+      "oldName" : "ROLE",
+      "fieldName" : "role",
+      "sqlType" : "string",
+      "javaType" : "string",
+      "length" : 20,
+      "precision" : 0,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    }, {
+      "name" : "TENANTID",
+      "oldName" : "TENANTID",
+      "fieldName" : "tenantid",
+      "sqlType" : "number",
+      "javaType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "scale" : 0,
+      "nullable" : true,
+      "defaultValue" : null,
+      "sequenceName" : null,
+      "generatorType" : "identity"
+    } ],
+    "primaryKey" : {
+      "name" : "GENERATED_PK_USER_USERID",
+      "virtual" : false,
+      "columns" : [ "USERID" ],
+      "generator" : {
+        "generatorType" : "identity",
+        "generatorValue" : null
+      }
+    },
+    "relations" : [ ],
+    "constraints" : null
+  } ]
+}

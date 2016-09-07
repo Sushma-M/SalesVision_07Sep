@@ -1,0 +1,300 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "f423556c-711d-432c-aa05-85d0dd563ed9",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "googleapis",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true
+  },
+  "host" : "maps.googleapis.com",
+  "basePath" : "/",
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ],
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/googleMap/invoke/api/directions/xml" : {
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "operationId" : "googleMap_RestServiceVirtualController-invoke",
+        "consumes" : [ "text/xml" ],
+        "parameters" : [ {
+          "name" : "sensor",
+          "in" : "query",
+          "description" : "sensor",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "origin",
+          "in" : "query",
+          "description" : "origin",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "destination",
+          "in" : "query",
+          "description" : "destination",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/DirectionsResponse"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "f54340e2-2a1c-4c87-a7c0-696015c149f0",
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-BASE_PATH" : "/googleMap/invoke/api/directions/xml",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : ""
+    }
+  },
+  "definitions" : {
+    "bounds" : {
+      "properties" : {
+        "southwest" : {
+          "$ref" : "#/definitions/southwest"
+        },
+        "northeast" : {
+          "$ref" : "#/definitions/northeast"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleMap.bounds",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "leg" : {
+      "properties" : {
+        "distance" : {
+          "$ref" : "#/definitions/distance"
+        },
+        "duration" : {
+          "$ref" : "#/definitions/duration"
+        },
+        "end_location" : {
+          "$ref" : "#/definitions/end_location"
+        },
+        "start_address" : {
+          "type" : "string"
+        },
+        "end_address" : {
+          "type" : "string"
+        },
+        "start_location" : {
+          "$ref" : "#/definitions/start_location"
+        },
+        "step" : {
+          "type" : "array",
+          "uniqueItems" : false,
+          "items" : {
+            "$ref" : "#/definitions/stepEntryItem"
+          },
+          "x-WM-IS_LIST" : true
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleMap.leg",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "duration" : {
+      "properties" : {
+        "text" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleMap.duration",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "distance" : {
+      "properties" : {
+        "text" : {
+          "type" : "string"
+        },
+        "value" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleMap.distance",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "end_location" : {
+      "properties" : {
+        "lng" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "lat" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleMap.end_location",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "polyline" : {
+      "properties" : {
+        "points" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleMap.polyline",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "stepEntryItem" : {
+      "properties" : {
+        "distance" : {
+          "$ref" : "#/definitions/distance"
+        },
+        "html_instructions" : {
+          "type" : "string"
+        },
+        "duration" : {
+          "$ref" : "#/definitions/duration"
+        },
+        "end_location" : {
+          "$ref" : "#/definitions/end_location"
+        },
+        "polyline" : {
+          "$ref" : "#/definitions/polyline"
+        },
+        "start_location" : {
+          "$ref" : "#/definitions/start_location"
+        },
+        "maneuver" : {
+          "type" : "string"
+        },
+        "travel_mode" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleMap.stepEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "DirectionsResponse" : {
+      "properties" : {
+        "status" : {
+          "type" : "string"
+        },
+        "route" : {
+          "$ref" : "#/definitions/route"
+        },
+        "geocoded_waypoint" : {
+          "type" : "array",
+          "uniqueItems" : false,
+          "items" : {
+            "$ref" : "#/definitions/geocoded_waypointEntryItem"
+          },
+          "x-WM-IS_LIST" : true
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleMap.DirectionsResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "geocoded_waypointEntryItem" : {
+      "properties" : {
+        "place_id" : {
+          "type" : "string"
+        },
+        "geocoder_status" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "array",
+          "uniqueItems" : false,
+          "items" : {
+            "type" : "string"
+          },
+          "x-WM-IS_LIST" : true
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleMap.geocoded_waypointEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "route" : {
+      "properties" : {
+        "bounds" : {
+          "$ref" : "#/definitions/bounds"
+        },
+        "summary" : {
+          "type" : "string"
+        },
+        "leg" : {
+          "$ref" : "#/definitions/leg"
+        },
+        "copyrights" : {
+          "type" : "string"
+        },
+        "overview_polyline" : {
+          "$ref" : "#/definitions/overview_polyline"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleMap.route",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "start_location" : {
+      "properties" : {
+        "lng" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "lat" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleMap.start_location",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "southwest" : {
+      "properties" : {
+        "lng" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "lat" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleMap.southwest",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "northeast" : {
+      "properties" : {
+        "lng" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "lat" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleMap.northeast",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "overview_polyline" : {
+      "properties" : {
+        "points" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleMap.overview_polyline",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  }
+}

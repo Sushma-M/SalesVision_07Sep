@@ -1,0 +1,308 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "e0a76671-e785-4c28-a4ab-37cc5c46ab19",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "sharepoint",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true
+  },
+  "host" : "wavemaker1.sharepoint.com",
+  "basePath" : "/",
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ],
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/sp_insert_customer_repo_list/invoke/web/lists/getByTitle('CustomerRepository')/items" : {
+      "post" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "operationId" : "sp_insert_customer_repo_list_RestServiceVirtualController-invoke",
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Accept",
+          "in" : "header",
+          "description" : "Accept",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "description" : "Authorization",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-EDITABLE" : true
+        }, {
+          "in" : "body",
+          "name" : "RequestBody",
+          "description" : "RequestBody",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/RootRequest"
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Object"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "1c80fab5-6ae3-40f8-b122-31a7485bdee3",
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-BASE_PATH" : "/sp_insert_customer_repo_list/invoke/web/lists/getByTitle('CustomerRepository')/items",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : ""
+    }
+  },
+  "definitions" : {
+    "RootResponse" : {
+      "properties" : {
+        "d" : {
+          "$ref" : "#/definitions/d"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "sp_insert_customer_repo_list.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "d" : {
+      "properties" : {
+        "GUID" : {
+          "type" : "string"
+        },
+        "Folder" : {
+          "$ref" : "#/definitions/Folder"
+        },
+        "File" : {
+          "$ref" : "#/definitions/File"
+        },
+        "AuthorId" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "RoleAssignments" : {
+          "$ref" : "#/definitions/RoleAssignments"
+        },
+        "Attachments" : {
+          "type" : "boolean"
+        },
+        "OData__UIVersionString" : {
+          "type" : "string"
+        },
+        "FieldValuesForEdit" : {
+          "$ref" : "#/definitions/FieldValuesForEdit"
+        },
+        "CustomerName" : {
+          "type" : "string"
+        },
+        "Title" : {
+          "type" : "string"
+        },
+        "ContentTypeId" : {
+          "type" : "string"
+        },
+        "FieldValuesAsHtml" : {
+          "$ref" : "#/definitions/FieldValuesAsHtml"
+        },
+        "FirstUniqueAncestorSecurableObject" : {
+          "$ref" : "#/definitions/FirstUniqueAncestorSecurableObject"
+        },
+        "Created" : {
+          "type" : "string"
+        },
+        "GetDlpPolicyTip" : {
+          "$ref" : "#/definitions/GetDlpPolicyTip"
+        },
+        "Modified" : {
+          "type" : "string"
+        },
+        "EditorId" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "FileSystemObjectType" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "ID" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "FieldValuesAsText" : {
+          "$ref" : "#/definitions/FieldValuesAsText"
+        },
+        "ParentList" : {
+          "$ref" : "#/definitions/ParentList"
+        },
+        "Id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "AttachmentFiles" : {
+          "$ref" : "#/definitions/AttachmentFiles"
+        },
+        "__metadata" : {
+          "$ref" : "#/definitions/__metadata"
+        },
+        "ContentType" : {
+          "$ref" : "#/definitions/ContentType"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "sp_insert_customer_repo_list.d",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "Folder" : {
+      "properties" : {
+        "__deferred" : {
+          "$ref" : "#/definitions/__deferred"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "sp_insert_customer_repo_list.Folder",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "File" : {
+      "properties" : {
+        "__deferred" : {
+          "$ref" : "#/definitions/__deferred"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "sp_insert_customer_repo_list.File",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "RoleAssignments" : {
+      "properties" : {
+        "__deferred" : {
+          "$ref" : "#/definitions/__deferred"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "sp_insert_customer_repo_list.RoleAssignments",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "FieldValuesForEdit" : {
+      "properties" : {
+        "__deferred" : {
+          "$ref" : "#/definitions/__deferred"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "sp_insert_customer_repo_list.FieldValuesForEdit",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "FieldValuesAsHtml" : {
+      "properties" : {
+        "__deferred" : {
+          "$ref" : "#/definitions/__deferred"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "sp_insert_customer_repo_list.FieldValuesAsHtml",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "FirstUniqueAncestorSecurableObject" : {
+      "properties" : {
+        "__deferred" : {
+          "$ref" : "#/definitions/__deferred"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "sp_insert_customer_repo_list.FirstUniqueAncestorSecurableObject",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "RootRequest" : {
+      "properties" : {
+        "CustomerName" : {
+          "type" : "string"
+        },
+        "Title" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "sp_insert_customer_repo_list.RootRequest",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "__deferred" : {
+      "properties" : {
+        "uri" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "sp_insert_customer_repo_list.__deferred",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "GetDlpPolicyTip" : {
+      "properties" : {
+        "__deferred" : {
+          "$ref" : "#/definitions/__deferred"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "sp_insert_customer_repo_list.GetDlpPolicyTip",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "FieldValuesAsText" : {
+      "properties" : {
+        "__deferred" : {
+          "$ref" : "#/definitions/__deferred"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "sp_insert_customer_repo_list.FieldValuesAsText",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "ParentList" : {
+      "properties" : {
+        "__deferred" : {
+          "$ref" : "#/definitions/__deferred"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "sp_insert_customer_repo_list.ParentList",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "AttachmentFiles" : {
+      "properties" : {
+        "__deferred" : {
+          "$ref" : "#/definitions/__deferred"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "sp_insert_customer_repo_list.AttachmentFiles",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "__metadata" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "etag" : {
+          "type" : "string"
+        },
+        "type" : {
+          "type" : "string"
+        },
+        "uri" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "sp_insert_customer_repo_list.__metadata",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "ContentType" : {
+      "properties" : {
+        "__deferred" : {
+          "$ref" : "#/definitions/__deferred"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "sp_insert_customer_repo_list.ContentType",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  }
+}

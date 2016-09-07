@@ -1,0 +1,7 @@
+{
+  "name" : "MyTestDatabase",
+  "description" : "MyTestDatabase",
+  "packageName" : "com.salesvision2_0.mytestdatabase",
+  "draft" : false,
+  "tables" : [ ]
+}
