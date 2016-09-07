@@ -23,8 +23,8 @@
             <element name="department" typeRef="com.hrdb.Department" allowNull="true"/>
             <element name="deptid" typeRef="java.lang.Integer" allowNull="true"/>
             <element name="eid" typeRef="java.lang.Integer" allowNull="true"/>
-            <element name="employee" typeRef="com.hrdb.Employee" allowNull="true"/>
-            <element name="employees" typeRef="com.hrdb.Employee" isList="true" allowNull="true"/>
+            <element name="employeeByManagerid" typeRef="com.hrdb.Employee" allowNull="true"/>
+            <element name="employeesForManagerid" typeRef="com.hrdb.Employee" isList="true" allowNull="true"/>
             <element name="firstname" typeRef="java.lang.String" allowNull="true"/>
             <element name="lastname" typeRef="java.lang.String" allowNull="true"/>
             <element name="managerid" typeRef="java.lang.Integer" allowNull="true"/>

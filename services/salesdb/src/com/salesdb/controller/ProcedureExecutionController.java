@@ -18,16 +18,15 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import com.salesdb.service.SalesdbProcedureExecutorService;
 import com.wavemaker.runtime.data.model.CustomProcedure;
 import com.wavemaker.runtime.data.exception.QueryParameterMismatchException;
-import com.wordnik.swagger.annotations.*;
-import com.wavemaker.tools.api.core.annotations.WMAccessVisibility;
-import com.wavemaker.tools.api.core.models.AccessSpecifier;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
+import com.wavemaker.tools.api.core.annotations.WMAccessVisibility;
+import com.wavemaker.tools.api.core.models.AccessSpecifier;
 
 @RestController(value = "Salesdb.ProcedureExecutionController")
-@RequestMapping("/salesdb/procedureExecutor")
 @Api(value = "ProcedureExecutionController", description = "Controller class for procedure execution")
+@RequestMapping("/salesdb/procedureExecutor")
 public class ProcedureExecutionController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ProcedureExecutionController.class);
@@ -35,9 +34,9 @@ public class ProcedureExecutionController {
     @Autowired
     private SalesdbProcedureExecutorService procedureService;
 
+    @ApiOperation(value = "Process request to execute custom Procedure")
     @RequestMapping(value = "/procedure/execute/wm_custom", method = RequestMethod.POST)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    @ApiOperation(value = "Process request to execute custom Procedure")
     public List<Object> executeWMCustomProcedure(@RequestBody CustomProcedure procedure) {
         List<Object> result = procedureService.executeWMCustomProcedure(procedure);
         LOGGER.debug("got the result {}" + result);

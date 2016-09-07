@@ -21,16 +21,15 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import com.salesdb.service.SalesdbQueryExecutorService;
 import com.wavemaker.runtime.data.model.CustomQuery;
 import com.wavemaker.runtime.data.exception.QueryParameterMismatchException;
-import com.wordnik.swagger.annotations.*;
-import com.wavemaker.tools.api.core.annotations.WMAccessVisibility;
-import com.wavemaker.tools.api.core.models.AccessSpecifier;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
+import com.wavemaker.tools.api.core.annotations.WMAccessVisibility;
+import com.wavemaker.tools.api.core.models.AccessSpecifier;
 
 @RestController(value = "Salesdb.QueryExecutionController")
-@RequestMapping("/salesdb/queryExecutor")
 @Api(value = "QueryExecutionController", description = "Controller class for query execution")
+@RequestMapping("/salesdb/queryExecutor")
 public class QueryExecutionController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(QueryExecutionController.class);
@@ -39,11 +38,31 @@ public class QueryExecutionController {
     private SalesdbQueryExecutorService queryService;
 
     @ApiOperation(value = "Process request to execute queries")
-    @RequestMapping(value = "/queries/weeklyFollowUps", method = RequestMethod.GET)
+    @RequestMapping(value = "/queries/customersRatio", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public Page<Object> executeWeeklyFollowUps(@RequestParam(value = "year", required = false) java.lang.Integer year, @RequestParam(value = "month", required = false) java.lang.Integer month, Pageable pageable) throws QueryParameterMismatchException {
-        LOGGER.debug("Executing named query weeklyFollowUps");
-        Page<Object> result = queryService.executeWeeklyFollowUps(pageable, year, month);
+    public Page<Object> executeCustomersRatio(@RequestParam(value = "year", required = false) java.lang.Integer year, @RequestParam(value = "month", required = false) java.lang.Integer month, Pageable pageable) throws QueryParameterMismatchException {
+        LOGGER.debug("Executing named query customersRatio");
+        Page<Object> result = queryService.executeCustomersRatio(pageable, year, month);
+        LOGGER.debug("got the result of named query {}", result);
+        return result;
+    }
+
+    @ApiOperation(value = "Process request to execute queries")
+    @RequestMapping(value = "/queries/eachRepCustomerWiseSales", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<Object> executeEachRepCustomerWiseSales(@RequestParam(value = "id", required = false) java.lang.Integer id, Pageable pageable) throws QueryParameterMismatchException {
+        LOGGER.debug("Executing named query eachRepCustomerWiseSales");
+        Page<Object> result = queryService.executeEachRepCustomerWiseSales(pageable, id);
+        LOGGER.debug("got the result of named query {}", result);
+        return result;
+    }
+
+    @ApiOperation(value = "Process request to execute queries")
+    @RequestMapping(value = "/queries/leadsByChannel", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<Object> executeLeadsByChannel(@RequestParam(value = "channel", required = false) java.lang.Integer channel, Pageable pageable) throws QueryParameterMismatchException {
+        LOGGER.debug("Executing named query leadsByChannel");
+        Page<Object> result = queryService.executeLeadsByChannel(pageable, channel);
         LOGGER.debug("got the result of named query {}", result);
         return result;
     }
@@ -69,6 +88,46 @@ public class QueryExecutionController {
     }
 
     @ApiOperation(value = "Process request to execute queries")
+    @RequestMapping(value = "/queries/revenueHeatMap", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<Object> executeRevenueHeatMap(@RequestParam(value = "year", required = false) java.lang.Integer year, @RequestParam(value = "month", required = false) java.lang.Integer month, Pageable pageable) throws QueryParameterMismatchException {
+        LOGGER.debug("Executing named query revenueHeatMap");
+        Page<Object> result = queryService.executeRevenueHeatMap(pageable, year, month);
+        LOGGER.debug("got the result of named query {}", result);
+        return result;
+    }
+
+    @ApiOperation(value = "Process request to execute queries")
+    @RequestMapping(value = "/queries/salesByChannels", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<Object> executeSalesByChannels(@RequestParam(value = "year", required = false) java.lang.Integer year, @RequestParam(value = "month", required = false) java.lang.Integer month, Pageable pageable) throws QueryParameterMismatchException {
+        LOGGER.debug("Executing named query salesByChannels");
+        Page<Object> result = queryService.executeSalesByChannels(pageable, year, month);
+        LOGGER.debug("got the result of named query {}", result);
+        return result;
+    }
+
+    @ApiOperation(value = "Process request to execute queries")
+    @RequestMapping(value = "/queries/salesByEachRep", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<Object> executeSalesByEachRep(@RequestParam(value = "id", required = false) java.lang.Integer id, Pageable pageable) throws QueryParameterMismatchException {
+        LOGGER.debug("Executing named query salesByEachRep");
+        Page<Object> result = queryService.executeSalesByEachRep(pageable, id);
+        LOGGER.debug("got the result of named query {}", result);
+        return result;
+    }
+
+    @ApiOperation(value = "Process request to execute queries")
+    @RequestMapping(value = "/queries/salesByReps", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public Page<Object> executeSalesByReps(@RequestParam(value = "channel", required = false) java.lang.Integer channel, Pageable pageable) throws QueryParameterMismatchException {
+        LOGGER.debug("Executing named query salesByReps");
+        Page<Object> result = queryService.executeSalesByReps(pageable, channel);
+        LOGGER.debug("got the result of named query {}", result);
+        return result;
+    }
+
+    @ApiOperation(value = "Process request to execute queries")
     @RequestMapping(value = "/queries/salesRevenueAndCount", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     public Page<Object> executeSalesRevenueAndCount(@RequestParam(value = "channel", required = false) java.lang.Integer channel, Pageable pageable) throws QueryParameterMismatchException {
@@ -89,26 +148,6 @@ public class QueryExecutionController {
     }
 
     @ApiOperation(value = "Process request to execute queries")
-    @RequestMapping(value = "/queries/salesByReps", method = RequestMethod.GET)
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public Page<Object> executeSalesByReps(@RequestParam(value = "channel", required = false) java.lang.Integer channel, Pageable pageable) throws QueryParameterMismatchException {
-        LOGGER.debug("Executing named query salesByReps");
-        Page<Object> result = queryService.executeSalesByReps(pageable, channel);
-        LOGGER.debug("got the result of named query {}", result);
-        return result;
-    }
-
-    @ApiOperation(value = "Process request to execute queries")
-    @RequestMapping(value = "/queries/salesByChannels", method = RequestMethod.GET)
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public Page<Object> executeSalesByChannels(@RequestParam(value = "year", required = false) java.lang.Integer year, @RequestParam(value = "month", required = false) java.lang.Integer month, Pageable pageable) throws QueryParameterMismatchException {
-        LOGGER.debug("Executing named query salesByChannels");
-        Page<Object> result = queryService.executeSalesByChannels(pageable, year, month);
-        LOGGER.debug("got the result of named query {}", result);
-        return result;
-    }
-
-    @ApiOperation(value = "Process request to execute queries")
     @RequestMapping(value = "/queries/weeklyConverted", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     public Page<Object> executeWeeklyConverted(@RequestParam(value = "year", required = false) java.lang.Integer year, @RequestParam(value = "month", required = false) java.lang.Integer month, Pageable pageable) throws QueryParameterMismatchException {
@@ -119,61 +158,21 @@ public class QueryExecutionController {
     }
 
     @ApiOperation(value = "Process request to execute queries")
-    @RequestMapping(value = "/queries/revenueHeatMap", method = RequestMethod.GET)
+    @RequestMapping(value = "/queries/weeklyFollowUps", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public Page<Object> executeRevenueHeatMap(@RequestParam(value = "year", required = false) java.lang.Integer year, @RequestParam(value = "month", required = false) java.lang.Integer month, Pageable pageable) throws QueryParameterMismatchException {
-        LOGGER.debug("Executing named query revenueHeatMap");
-        Page<Object> result = queryService.executeRevenueHeatMap(pageable, year, month);
+    public Page<Object> executeWeeklyFollowUps(@RequestParam(value = "year", required = false) java.lang.Integer year, @RequestParam(value = "month", required = false) java.lang.Integer month, Pageable pageable) throws QueryParameterMismatchException {
+        LOGGER.debug("Executing named query weeklyFollowUps");
+        Page<Object> result = queryService.executeWeeklyFollowUps(pageable, year, month);
         LOGGER.debug("got the result of named query {}", result);
         return result;
     }
 
     @ApiOperation(value = "Process request to execute queries")
-    @RequestMapping(value = "/queries/customersRatio", method = RequestMethod.GET)
+    @RequestMapping(value = "/queries/weeklyLeads", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public Page<Object> executeCustomersRatio(@RequestParam(value = "year", required = false) java.lang.Integer year, @RequestParam(value = "month", required = false) java.lang.Integer month, Pageable pageable) throws QueryParameterMismatchException {
-        LOGGER.debug("Executing named query customersRatio");
-        Page<Object> result = queryService.executeCustomersRatio(pageable, year, month);
-        LOGGER.debug("got the result of named query {}", result);
-        return result;
-    }
-
-    @ApiOperation(value = "Process request to execute queries")
-    @RequestMapping(value = "/queries/leadsByChannel", method = RequestMethod.GET)
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public Page<Object> executeLeadsByChannel(@RequestParam(value = "channel", required = false) java.lang.Integer channel, Pageable pageable) throws QueryParameterMismatchException {
-        LOGGER.debug("Executing named query leadsByChannel");
-        Page<Object> result = queryService.executeLeadsByChannel(pageable, channel);
-        LOGGER.debug("got the result of named query {}", result);
-        return result;
-    }
-
-    @ApiOperation(value = "Process request to execute queries")
-    @RequestMapping(value = "/queries/salesByEachRep", method = RequestMethod.GET)
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public Page<Object> executeSalesByEachRep(@RequestParam(value = "id", required = false) java.lang.Integer id, Pageable pageable) throws QueryParameterMismatchException {
-        LOGGER.debug("Executing named query salesByEachRep");
-        Page<Object> result = queryService.executeSalesByEachRep(pageable, id);
-        LOGGER.debug("got the result of named query {}", result);
-        return result;
-    }
-
-    @ApiOperation(value = "Process request to execute queries")
-    @RequestMapping(value = "/queries/eachRepCustomerWiseSales", method = RequestMethod.GET)
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public Page<Object> executeEachRepCustomerWiseSales(@RequestParam(value = "id", required = false) java.lang.Integer id, Pageable pageable) throws QueryParameterMismatchException {
-        LOGGER.debug("Executing named query eachRepCustomerWiseSales");
-        Page<Object> result = queryService.executeEachRepCustomerWiseSales(pageable, id);
-        LOGGER.debug("got the result of named query {}", result);
-        return result;
-    }
-
-    @ApiOperation(value = "Process request to execute queries")
-    @RequestMapping(value = "/queries/weeklySales", method = RequestMethod.GET)
-    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public Page<Object> executeWeeklySales(@RequestParam(value = "year", required = false) java.lang.Integer year, @RequestParam(value = "month", required = false) java.lang.Integer month, Pageable pageable) throws QueryParameterMismatchException {
-        LOGGER.debug("Executing named query weeklySales");
-        Page<Object> result = queryService.executeWeeklySales(pageable, year, month);
+    public Page<Object> executeWeeklyLeads(@RequestParam(value = "year", required = false) java.lang.Integer year, @RequestParam(value = "month", required = false) java.lang.Integer month, Pageable pageable) throws QueryParameterMismatchException {
+        LOGGER.debug("Executing named query weeklyLeads");
+        Page<Object> result = queryService.executeWeeklyLeads(pageable, year, month);
         LOGGER.debug("got the result of named query {}", result);
         return result;
     }
@@ -189,17 +188,17 @@ public class QueryExecutionController {
     }
 
     @ApiOperation(value = "Process request to execute queries")
-    @RequestMapping(value = "/queries/weeklyLeads", method = RequestMethod.GET)
+    @RequestMapping(value = "/queries/weeklySales", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    public Page<Object> executeWeeklyLeads(@RequestParam(value = "year", required = false) java.lang.Integer year, @RequestParam(value = "month", required = false) java.lang.Integer month, Pageable pageable) throws QueryParameterMismatchException {
-        LOGGER.debug("Executing named query weeklyLeads");
-        Page<Object> result = queryService.executeWeeklyLeads(pageable, year, month);
+    public Page<Object> executeWeeklySales(@RequestParam(value = "year", required = false) java.lang.Integer year, @RequestParam(value = "month", required = false) java.lang.Integer month, Pageable pageable) throws QueryParameterMismatchException {
+        LOGGER.debug("Executing named query weeklySales");
+        Page<Object> result = queryService.executeWeeklySales(pageable, year, month);
         LOGGER.debug("got the result of named query {}", result);
         return result;
     }
 
-    @RequestMapping(value = "/queries/wm_custom", method = RequestMethod.POST)
     @ApiOperation(value = "Process request to execute customer queries")
+    @RequestMapping(value = "/queries/wm_custom", method = RequestMethod.POST)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     public Page<Object> executeWMCustomQuery(@RequestBody CustomQuery query, Pageable pageable) {
         Page<Object> result = queryService.executeWMCustomQuerySelect(query, pageable);
@@ -207,9 +206,9 @@ public class QueryExecutionController {
         return result;
     }
 
+    @ApiOperation(value = "Process request to execute customer queries")
     @RequestMapping(value = "/queries/wm_custom_update", method = RequestMethod.POST)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    @ApiOperation(value = "Process request to execute customer queries")
     public int executeWMCustomQuery(@RequestBody CustomQuery query) {
         int result = queryService.executeWMCustomQueryUpdate(query);
         LOGGER.debug("got the result {}" + result);

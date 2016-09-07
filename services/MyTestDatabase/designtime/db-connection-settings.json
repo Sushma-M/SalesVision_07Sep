@@ -5,14 +5,14 @@
   "driverClass" : "com.mysql.jdbc.Driver",
   "dialect" : "com.wavemaker.runtime.data.dialect.MySQLDialect",
   "serviceId" : "MyTestDatabase",
-  "packageName" : "com.MyTestDatabase",
+  "packageName" : "com.salesvision2_0.mytestdatabase",
   "dbType" : "MySQL",
   "host" : "{WM_CLOUD_MYSQL_HOST}",
   "dbName" : "MyTestDatabase",
   "port" : "3306",
   "schemaName" : null,
-  "schemaFilter" : [ ".*" ],
   "tableFilter" : [ ".*" ],
+  "schemaFilter" : [ ".*" ],
   "impersonateUser" : false,
   "activeDirectoryDomain" : null,
   "hbm2ddl" : "update",
@@ -20,8 +20,9 @@
   "dataSourceType" : "WM_MANAGED_DATASOURCE",
   "jndiName" : "",
   "reloadInfo" : {
-    "message" : "There are changes to Database APIs in the recent platform upgrade, which requires your application's generated code to be updated.",
-    "reason" : "MIGRATION_FAILED",
-    "reload" : true
-  }
+    "reload" : false,
+    "reason" : null,
+    "message" : null
+  },
+  "readOnly" : false
 }
