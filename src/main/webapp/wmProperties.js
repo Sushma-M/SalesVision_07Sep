@@ -1,5 +1,5 @@
 var _WM_APP_PROPERTIES = {
-  "activeTheme" : "flyer",
+  "activeTheme" : "vermillion",
   "defaultLanguage" : "en",
   "displayName" : "SalesVision_07Sep",
   "homePage" : "Main",
